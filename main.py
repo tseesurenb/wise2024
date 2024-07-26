@@ -112,8 +112,8 @@ def run_experiment(rating_df, num_users, num_items, g_mean_rating, g_seed):
     
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    if g_verbose:
-        print(f"Device is - {device}")
+    #if g_verbose:
+    print(f"Device is - {device}")
     
     model = model.to(device)
     optimizer = optim.Adam(model.parameters(), lr = g_lr, weight_decay=g_decay)
