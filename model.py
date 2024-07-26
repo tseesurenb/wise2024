@@ -175,12 +175,9 @@ class LGCN(MessagePassing):
               
         return ratings
     
-    def message(self, x_j, norm, edge_weight=None):
+    def message(self, x_j, norm):
         out =  x_j * norm.view(-1, 1)
-        
-        if edge_weight is not None:
-            out = out * edge_weight.view(-1, 1)
-        
+                
         return out
     
     #def aggregate(self, edge_index, x, norm, edge_weight=None):
